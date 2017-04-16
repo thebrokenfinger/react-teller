@@ -43,7 +43,8 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.js?$/, exclude: /node_modules/, loader: 'babel-loader' },
-      { test: /\.json?$/, exclude: /node_modules/, loader: 'json-loader' }
+      { test: /\.css?$/, exclude: /node_modules/, loader: 'style-loader!css-loader!postcss-loader' },
+      { test: /\.(eot|svg|ttf|woff|woff2)$/, loader: 'file-loader' }
     ]
   }
 };
