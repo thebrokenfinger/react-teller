@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Open Sans';
+  src: url("./OpenSans/OpenSans-Light.eot?v=1.1.0");
+  src: url("./OpenSans/OpenSans-Light.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("./OpenSans/OpenSans-Light.woff2?v=1.1.0") format("woff2"), url("./OpenSans/OpenSans-Light.woff?v=1.1.0") format("woff"), url("./OpenSans/OpenSans-Light.ttf?v=1.1.0") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url("./Montserrat/Montserrat-Regular.ttf") format("truetype");
+}
