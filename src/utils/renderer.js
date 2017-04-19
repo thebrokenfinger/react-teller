@@ -1,36 +1,36 @@
-import React from 'react'
-import { render, unmountComponentAtNode } from 'react-dom'
-import NotificationComponent from '../components'
+import React from "react";
+import { render, unmountComponentAtNode } from "react-dom";
+import NotificationComponent from "../components";
 
 function getContainerClassName(position /* notification position */) {
-  const className = 'notification-container '
+  const className = "notification-container ";
 
-  switch(position) {
-    case 'top-left':
-    case 'bottom-left':
-    case 'bottom-right':
-      return className + position.replace('-', '')
+  switch (position) {
+    case "top-left":
+    case "bottom-left":
+    case "bottom-right":
+      return className + position.replace("-", "");
 
-    case 'top-right':
+    case "top-right":
     default:
-      return className + 'topright'
+      return className + "topright";
   }
 }
 
 function getNotificationContainer(config) {
-  const className = getContainerClassName(config.position)
-  let container = document.getElementsByClassName(className)[0]
+  const className = getContainerClassName(config.position);
+  let container = document.getElementsByClassName(className)[0];
 
   if (!container) {
-    container = document.createElement('div')
-    container.setAttribute('class', className)
-    document.body.appendChild(container)
+    container = document.createElement("div");
+    container.setAttribute("class", className);
+    document.body.appendChild(container);
   }
 
-  return container
+  return container;
 }
 
-export function mount({title, parsedTemplate /* parsed template */, config}) {
+export function mount({ title, parsedTemplate /* parsed template */, config }) {
   render(
     <NotificationComponent
       config={config}
@@ -38,9 +38,9 @@ export function mount({title, parsedTemplate /* parsed template */, config}) {
       template={parsedTemplate}
     />,
     getNotificationContainer(config)
-  )
+  );
 }
 
 export function unmount(config) {
-  unmountComponentAtNode(getNotificationContainer(config))
+  unmountComponentAtNode(getNotificationContainer(config));
 }

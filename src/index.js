@@ -1,4 +1,4 @@
-import Notification from './constructors'
-import './fonts/font.css'
+import Notification from "./constructors";
+import "./fonts/font.css";
 
-export default Notification
+export default Notification;
