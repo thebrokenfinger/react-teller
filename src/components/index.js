@@ -1,7 +1,3 @@
-import React, { Component} from 'react'
+import Notification from './Notification'
 
-const NotificationComponent = ({template}) => (
-  <div>{template}</div>
-)
-
-export default NotificationComponent
+export default Notification

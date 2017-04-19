@@ -1,0 +1,78 @@
+.notification-container {
+  position: fixed;
+  padding: 20px 10px;
+  min-height: 100px;
+  width: 320px;
+  box-sizing: border-box;
+}
+
+.notification-container.topright {
+  top: 0;
+  right: 0;
+}
+
+.notification-container.topleft {
+  top: 0;
+  left: 0;
+}
+
+.notification-container.bottomleft {
+  bottom: 0;
+  left: 0;
+}
+
+.notification-container.bottomright {
+  bottom: 0;
+  right: 0;
+}
+
+.notification {
+  display: block;
+  min-height: 80px;
+  width: 300px;
+  margin-bottom: 30px;
+  padding: 15px 5px;
+  border-radius: 3px;
+  box-sizing: border-box;
+  background: #fff;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  font: 14px 'Open Sans';
+  cursor: pointer;
+  transition: .3s all ease;
+}
+
+.notification:last-child {
+  margin-bottom: 0;
+}
+
+.notification-container.topright .notification.dissolve,
+.notification-container.bottomright .notification.dissolve {
+  margin-left: 320px;
+}
+
+.notification-container.topleft .notification.dissolve,
+.notification-container.bottomleft .notification.dissolve {
+  margin-left: -320px;
+}
+
+.notification .title {
+  margin: 0 0 15px;
+  font-family: 'Montserrat';
+  font-weight: bolder;
+}
+
+.info {
+  border-top: 4px solid #0099CC;
+}
+
+.success {
+  border-top: 4px solid #00695C;
+}
+
+.warning {
+  border-top: 4px solid #FF8800;
+}
+
+.error {
+  border-top: 4px solid #CC0000;
+}
