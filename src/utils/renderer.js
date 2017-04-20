@@ -2,20 +2,7 @@ import React from "react";
 import { render, unmountComponentAtNode } from "react-dom";
 import NotificationComponent from "../components";
 
-function getContainerClassName(position /* notification position */) {
-  const className = "notification-container ";
-
-  switch (position) {
-    case "top-left":
-    case "bottom-left":
-    case "bottom-right":
-      return className + position.replace("-", "");
-
-    case "top-right":
-    default:
-      return className + "topright";
-  }
-}
+const getContainerClassName = (position) => (`notification-container ${position}`)
 
 function getNotificationContainer(config) {
   const className = getContainerClassName(config.position);
