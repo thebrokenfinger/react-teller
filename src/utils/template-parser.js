@@ -11,13 +11,16 @@ function generateConfiguration(configLines) {
   });
 
   // validating config options
-  if ('position' in config && !/^(top-right|top-left|bottom-left|bottom-right)$/.test(config.position)) {
+  if (
+    "position" in config &&
+    !/^(top-right|top-left|bottom-left|bottom-right)$/.test(config.position)
+  ) {
     delete config.position;
   } else {
-    config.position = config.position.replace("-", "")
+    config.position = config.position.replace("-", "");
   }
 
-  if ('type' in config && !/^(info|success|warning|error)$/.test(config.type)) {
+  if ("type" in config && !/^(info|success|warning|error)$/.test(config.type)) {
     delete config.type;
   }
 

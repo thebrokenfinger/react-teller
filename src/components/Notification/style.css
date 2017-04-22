@@ -30,7 +30,7 @@
   display: block;
   min-height: 80px;
   width: 300px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   padding: 15px 5px;
   border-radius: 3px;
   box-sizing: border-box;
@@ -39,10 +39,6 @@
   font: 14px 'Open Sans';
   cursor: pointer;
   transition: .3s all ease;
-}
-
-.notification:last-child {
-  margin-bottom: 0;
 }
 
 .notification-container.topright .notification.dissolve,

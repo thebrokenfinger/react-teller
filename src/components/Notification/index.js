@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-import { unmount } from "../../utils/renderer";
 import "./style.css";
 
 class Notification extends Component {
   componentDidMount() {
     setTimeout(() => {
       this.notification.className += " dissolve";
-      setTimeout(() => unmount(this.props.config), 500);
+      setTimeout(this.props.remove, 500);
     }, 2000);
   }
 

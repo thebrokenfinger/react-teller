@@ -2,32 +2,41 @@ import React from "react";
 import { render, unmountComponentAtNode } from "react-dom";
 import NotificationComponent from "../components";
 
-const getContainerClassName = (position) => (`notification-container ${position}`)
+const getContainerClassName = position => `notification-container ${position}`;
 
 function getNotificationContainer(config) {
   const className = getContainerClassName(config.position);
-  let container = document.getElementsByClassName(className)[0];
+  let rootContainer = document.getElementsByClassName(className)[0];
+  const container = document.createElement("div");
 
-  if (!container) {
-    container = document.createElement("div");
-    container.setAttribute("class", className);
-    document.body.appendChild(container);
+  if (!rootContainer) {
+    rootContainer = document.createElement("div");
+    rootContainer.setAttribute("class", className);
+    document.body.appendChild(rootContainer);
   }
+
+  rootContainer.appendChild(container);
 
   return container;
 }
 
 export function mount({ title, parsedTemplate /* parsed template */, config }) {
+  const container = getNotificationContainer(config);
+
   render(
     <NotificationComponent
       config={config}
       title={title}
       template={parsedTemplate}
+      remove={() => {
+        unmount(container);
+      }}
     />,
-    getNotificationContainer(config)
+    container
   );
 }
 
-export function unmount(config) {
-  unmountComponentAtNode(getNotificationContainer(config));
+export function unmount(container) {
+  unmountComponentAtNode(container);
+  container.remove();
 }
