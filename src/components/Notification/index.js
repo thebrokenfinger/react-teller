@@ -14,7 +14,11 @@ class Notification extends Component {
     const className = `notification ${config.type}`;
 
     return (
-      <div className={className} ref={e => (this.notification = e)}>
+      <div
+        className={className}
+        onClick={config.onClick}
+        ref={e => (this.notification = e)}
+      >
         {title && <p className="title">{title}</p>}
         {this.props.template}
       </div>

@@ -15,7 +15,11 @@ function getNotificationContainer(config) {
     document.body.appendChild(rootContainer);
   }
 
-  rootContainer.appendChild(container);
+  if (/^top/.test(config.position)) {
+    rootContainer.prepend(container);
+  } else {
+    rootContainer.appendChild(container);
+  }
 
   return container;
 }

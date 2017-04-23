@@ -1,4 +1,5 @@
 import React from "react";
+import configSanitizer from "./config-sanitizer";
 import defaultConfig from "./defaults.json";
 
 function generateConfiguration(configLines) {
@@ -10,21 +11,7 @@ function generateConfiguration(configLines) {
     config[prop] = value;
   });
 
-  // validating config options
-  if (
-    "position" in config &&
-    !/^(top-right|top-left|bottom-left|bottom-right)$/.test(config.position)
-  ) {
-    delete config.position;
-  } else {
-    config.position = config.position.replace("-", "");
-  }
-
-  if ("type" in config && !/^(info|success|warning|error)$/.test(config.type)) {
-    delete config.type;
-  }
-
-  return Object.assign({}, defaultConfig, config);
+  return Object.assign({}, defaultConfig, configSanitizer(config));
 }
 
 function getTitle(templateLines) {
