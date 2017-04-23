@@ -3,14 +3,16 @@ import Notification from './../../src'
 // Declare notifications
 const accountDeletionFail = Notification`
   -- type: warning
-  -- position: top-left
+  -- position: bottom-right
   # Account Deactivation
   Oops, we're facing some issues connecting to our servers
+
+  ${'hint'}
 `
 
 const accountDeletionSuccess = Notification`
   -- type: success
-  -- position: top-right
+  -- position: bottom-right
   # Account Deactivation
   Your account has been successfully deactivated
 `
@@ -23,12 +25,12 @@ const afterAccountDeletion = Notification`
 `
 
 // Trigger notifications
-accountDeletionFail()
+accountDeletionFail({hint: 'Please try again'})
 
 setTimeout(() => {
   accountDeletionSuccess()
-}, 2000)
+}, 1000)
 
 setTimeout(() => {
-  afterAccountDeletion()
-}, 4000)
+  afterAccountDeletion({onClick: () => {alert('Hello from this notification')}, position: 'bottom-left'})
+}, 2000)
