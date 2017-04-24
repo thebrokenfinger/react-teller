@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 var CompressionPlugin = require('compression-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 
 var reactExternal = {
@@ -18,8 +19,8 @@ var reactDOMExternal = {
 
 module.exports = {
   entry: {
-    'react-notifications': './src/index.js',
-    'react-notifications.min': './src/index.js'
+    'mynx': './src/index.js',
+    'mynx.min': './src/index.js'
   },
 
   externals: {
@@ -31,7 +32,7 @@ module.exports = {
     filename: '[name].js',
     chunkFilename: '[id].chunk.js',
     path: process.cwd() + '/dist',
-    publicPath: '/',
+    publicPath: '/dist/',
     libraryTarget: 'umd',
     library: 'ReactEmoj'
   },
@@ -53,14 +54,16 @@ module.exports = {
 			test: /\.min\.js$/,
 			threshold: 10240,
 			minRatio: 0.8
-		})
+		}),
+    new ExtractTextPlugin("mynx.css"),
   ],
 
   module: {
     loaders: [
       { test: /\.js?$/, exclude: /node_modules/, loader: 'babel-loader' },
-      { test: /\.css?$/, exclude: /node_modules/, loader: 'style-loader!css-loader!postcss-loader' },
-      { test: /\.(eot|svg|ttf|woff|woff2)$/, loader: 'file-loader' }
+      { test: /\.css?$/, exclude: /node_modules/, loader: ExtractTextPlugin.extract({
+        fallback: 'style-loader', use: 'css-loader!postcss-loader'}) },
+      { test: /\.(eot|svg|ttf|woff|woff2)?$/, loader: 'url-loader?limit=100000' }
     ]
   }
 };
