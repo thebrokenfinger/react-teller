@@ -3,10 +3,12 @@ import "./style.css";
 
 class Notification extends Component {
   componentDidMount() {
+    const { config, remove } = this.props;
+
     setTimeout(() => {
       this.notification.className += " dissolve";
-      setTimeout(this.props.remove, 500);
-    }, 2000);
+      setTimeout(remove, 500);
+    }, config.duration);
   }
 
   render() {
