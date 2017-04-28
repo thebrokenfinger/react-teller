@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yatharthk/react-notifications.git"
+    "url": "git+https://github.com/yatharthk/react-teller.git"
   },
   "keywords": [
     "react",
@@ -31,9 +31,9 @@
   "author": "Yatharth Khatri <yatharth01@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/yatharthk/react-notifications/issues"
+    "url": "https://github.com/yatharthk/react-teller/issues"
   },
-  "homepage": "https://github.com/yatharthk/react-notifications#readme",
+  "homepage": "https://github.com/yatharthk/react-teller#readme",
   "devDependencies": {
     "autoprefixer": "^6.7.7",
     "ava": "^0.17.0",
