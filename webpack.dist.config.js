@@ -34,7 +34,7 @@ module.exports = {
     path: process.cwd() + '/dist',
     publicPath: './',
     libraryTarget: 'umd',
-    library: 'ReactEmoj'
+    library: 'ReactTeller'
   },
 
   plugins: [

@@ -34,7 +34,7 @@ Interesting, right? Let's go through some more features of `React-Teller` and ho
 
 ### Title
 
-An easy way to provide the `title` for your notification is through text line preceeded with `#`.
+An easy way to provide the `title` for your notification is through text line preceded with `#`.
 
 ```javascript
 const MyNotification = Notification`
@@ -43,7 +43,7 @@ const MyNotification = Notification`
 `
 ```
 
-> NOTE: Only first line (preceeded with `#`) will be taken into account as title. Rest goes into notification text content. Also, title should be placed preceeding the content text.
+> NOTE: Only first line (preceded with `#`) will be taken into account as title. Rest goes into notification text content. Also, title should be placed preceding the content text.
 
 ### Configuration
 
@@ -57,7 +57,7 @@ const MyNotification = Notification`
 
 > NOTE: Currently, the animation supports `slide-out` effect only. More effects will be added in upcoming releases.
 
-Adding configuration to your notification has been made dead simple. No additional JSON objects anymore. Just add configuration props to template at the very beggining following these rules:
+Adding configuration to your notification has been made dead simple. No additional JSON objects anymore. Just add configuration props to template at the very beginning following these rules:
 
 - Starts with `--`
 - One property each line
@@ -79,7 +79,7 @@ As you must have noticed, `React-Notification` doesn't return a react component 
 
 ### Calling notifications with data
 
-Uptil now you've seen templates with plain text. Now that's not very useful for all the cases. Let's say you have to shoot out a notification welcoming your newly onboarded user addressing his name. You won't keep writing notifications everytime with a new name, right? Write reusable notification:
+Up till now you've seen templates with plain text. Now that's not very useful for all the cases. Let's say you have to shoot out a notification welcoming your newly on-boarded user addressing his name. You won't keep writing notifications every time with a new name, right? Write reusable notification:
 
 ```javascript
 // declare reusable notification
