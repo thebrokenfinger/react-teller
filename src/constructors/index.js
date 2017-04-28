@@ -25,7 +25,7 @@ const Notification = (rawTemplate, ...templateKeys) => {
 
     // override default config with new, if provided
     if (isConfigProvided) {
-      config = configSanitizer(Object.assign({}, config, arg));
+      config = Object.assign({}, config, configSanitizer(arg));
     }
 
     // mount notification

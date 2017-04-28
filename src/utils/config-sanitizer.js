@@ -4,7 +4,7 @@ export default function sanitizer(config) {
     !/^(top-right|top-left|bottom-left|bottom-right)$/.test(config.position)
   ) {
     delete config.position;
-  } else {
+  } else if ("position" in config) {
     config.position = config.position.replace("-", "");
   }
 
