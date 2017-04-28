@@ -1,10 +1,10 @@
 {
-  "name": "react-notifications",
-  "version": "0.1.2",
-  "description": "Easy-use emoji component for React",
-  "main": "./dist/react-notifications.min.js",
+  "name": "react-teller",
+  "version": "0.0.0-beta.1",
+  "description": "ReactJS notifications for ES6 age",
+  "main": "./dist/react-teller.js",
   "scripts": {
-    "build": "webpack --config webpack.dist.config.js",
+    "build": "npm run clean && webpack --config webpack.dist.config.js",
     "clean": "rimraf ./dist",
     "start": "webpack-dev-server",
     "test": "NODE_ENV=test nyc ava --verbose",
@@ -18,9 +18,15 @@
   "keywords": [
     "react",
     "react-component",
-    "emoticons",
-    "emoji",
-    "react-notificationsi"
+    "react-notifications",
+    "notifications",
+    "messages",
+    "animate",
+    "es6",
+    "template-literals",
+    "templates",
+    "config",
+    "prettier-formatted"
   ],
   "author": "Yatharth Khatri <yatharth01@gmail.com>",
   "license": "MIT",

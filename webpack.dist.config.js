@@ -19,8 +19,8 @@ var reactDOMExternal = {
 
 module.exports = {
   entry: {
-    'mynx': './src/index.js',
-    'mynx.min': './src/index.js'
+    'react-teller': './src/index.js',
+    'react-teller.min': './src/index.js'
   },
 
   externals: {
@@ -32,7 +32,7 @@ module.exports = {
     filename: '[name].js',
     chunkFilename: '[id].chunk.js',
     path: process.cwd() + '/dist',
-    publicPath: '/dist/',
+    publicPath: './',
     libraryTarget: 'umd',
     library: 'ReactEmoj'
   },
@@ -55,7 +55,7 @@ module.exports = {
 			threshold: 10240,
 			minRatio: 0.8
 		}),
-    new ExtractTextPlugin("mynx.css"),
+    new ExtractTextPlugin("react-teller.css"),
   ],
 
   module: {
