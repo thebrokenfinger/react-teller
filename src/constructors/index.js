@@ -10,7 +10,11 @@ const Notification = (rawTemplate, ...templateKeys) => {
 
     if (
       typeof arg === "object" &&
-      ("position" in arg || "onClick" in arg || "type" in arg)
+      ("position" in arg ||
+        "onClick" in arg ||
+        "type" in arg ||
+        "duration" in arg ||
+        "animation" in arg)
     ) {
       isConfigProvided = true;
       dataValues = dataValues.slice(1);

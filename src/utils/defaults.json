@@ -1,5 +1,6 @@
 {
-  "duration": 5000,
+  "animation": "slide",
+  "duration": 60000,
   "position": "topright",
   "type": "info"
 }

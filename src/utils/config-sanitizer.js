@@ -8,6 +8,10 @@ export default function sanitizer(config) {
     config.position = config.position.replace("-", "");
   }
 
+  if ("animation" in config && !/^(slide|fade)$/.test(config.animation)) {
+    delete config.animation;
+  }
+
   if ("type" in config && !/^(info|success|warning|error)$/.test(config.type)) {
     delete config.type;
   }

@@ -1,4 +1,4 @@
-.notification-container {
+.ReactTellerNotifications {
   position: fixed;
   padding: 20px 10px;
   min-height: 100px;
@@ -6,22 +6,22 @@
   box-sizing: border-box;
 }
 
-.notification-container.topright {
+.ReactTellerNotifications.topright {
   top: 0;
   right: 0;
 }
 
-.notification-container.topleft {
+.ReactTellerNotifications.topleft {
   top: 0;
   left: 0;
 }
 
-.notification-container.bottomleft {
+.ReactTellerNotifications.bottomleft {
   bottom: 0;
   left: 0;
 }
 
-.notification-container.bottomright {
+.ReactTellerNotifications.bottomright {
   bottom: 0;
   right: 0;
 }
@@ -41,14 +41,23 @@
   transition: .3s all ease;
 }
 
-.notification-container.topright .notification.dissolve,
-.notification-container.bottomright .notification.dissolve {
+.notification:hover {
+  transition: .1s box-shadow ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.ReactTellerNotifications.topright .notification.slide,
+.ReactTellerNotifications.bottomright .notification.slide {
   margin-left: 320px;
 }
 
-.notification-container.topleft .notification.dissolve,
-.notification-container.bottomleft .notification.dissolve {
+.ReactTellerNotifications.topleft .notification.slide,
+.ReactTellerNotifications.bottomleft .notification.slide {
   margin-left: -320px;
+}
+
+.notification.fade {
+  opacity: 0;
 }
 
 .notification .title {

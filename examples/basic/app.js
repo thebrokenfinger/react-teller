@@ -2,6 +2,7 @@ import Notification from './../../src'
 
 // Declare notifications
 const accountDeletionFail = Notification`
+  -- animation: fade
   -- type: warning
   -- position: bottom-right
   # Account Deactivation

@@ -53,6 +53,7 @@ const MyNotification = Notification`
 |--------|----------|---------|
 | `type` | `info` `success` `warning` `error`| `info` |
 | `position` | `top-right` `top-left` `bottom-right` `bottom-left` | `top-right` |
+| `animation` | `fade` `slide` | `slide` |
 | `duration` | `(in ms)` | `5000` |
 
 > NOTE: Currently, the animation supports `slide-out` effect only. More effects will be added in upcoming releases.
@@ -135,9 +136,9 @@ const handleClick = () => { /* do something */ }
 WelcomeUser({onClick: handleClick, ...overrides}, {name: 'John'})
 ```
 
-### Animation and effects
+### Animation
 
-At present, `React-Teller` comes with just `slide-out` animation effect. Upcoming releases are expected to come with more effects. :tada:
+`React Teller` ships with two effects - `Slide in-Slide out` and `Fade in-Fade out`. You can refer to the configuration table for valid `animation` property values.
 
 ## todo
 

@@ -2,7 +2,8 @@ import React from "react";
 import { render, unmountComponentAtNode } from "react-dom";
 import NotificationComponent from "../components";
 
-const getContainerClassName = position => `notification-container ${position}`;
+const getContainerClassName = position =>
+  `ReactTellerNotifications ${position}`;
 
 function getNotificationContainer(config) {
   const className = getContainerClassName(config.position);
